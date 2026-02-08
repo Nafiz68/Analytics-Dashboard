@@ -38,9 +38,10 @@ export const UserDistributionChart: React.FC<UserDistributionChartProps> = memo(
             cx="50%"
             cy="50%"
             labelLine={false}
-            label={({ name, percentage, isOther }) => 
-              isOther ? '' : `${name}: ${percentage}%`
-            }
+            label={(props: any) => {
+              const { name, percentage, isOther } = props;
+              return isOther ? '' : `${name}: ${percentage}%`;
+            }}
             outerRadius={80}
             fill="#8884d8"
             dataKey={(entry) => parseFloat(entry.percentage || '0')}
@@ -65,7 +66,7 @@ export const UserDistributionChart: React.FC<UserDistributionChartProps> = memo(
             }}
             labelStyle={{ color: '#fff' }}
             itemStyle={{ color: '#fff' }}
-            formatter={(value: number, name: string, props: any) => 
+            formatter={(value, name, props: any) => 
               props.payload.isOther ? null : [`${props.payload.percentage}%`, name]
             }
           />
