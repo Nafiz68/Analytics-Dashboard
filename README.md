@@ -2,6 +2,14 @@
 
 A modern, production-ready admin analytics dashboard built with Next.js, TypeScript, and Tailwind CSS. This project showcases real-time data visualization with beautiful charts, intuitive filters, and a clean user interface that adapts to both light and dark themes.
 
+## 🌐 Live Demo
+
+**👉 [View Live Dashboard](https://analytics-dashboard-appify-test.vercel.app/)** 
+
+Experience the dashboard in action with real-time charts, filters, and responsive design!
+
+---
+
 ##  Features
 
 ### Core Features
