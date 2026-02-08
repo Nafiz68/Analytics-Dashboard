@@ -77,7 +77,29 @@ npm run build
 npm start
 ```
 
-The optimized production build will be ready in the `.next` folder.##  Project Structure
+The optimized production build will be ready in the `.next` folder.
+
+## 🚀 Deploy to Vercel
+
+This project is optimized for Vercel deployment. Deploy your dashboard in under 2 minutes:
+
+### Quick Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Nafiz68/Analytics-Dashboard)
+
+**Or manually:**
+
+1. Push your code to GitHub (✅ already done!)
+2. Go to [vercel.com](https://vercel.com) and sign in with GitHub
+3. Click **"Add New Project"** → Import your `Analytics-Dashboard` repo
+4. Click **"Deploy"** (Vercel auto-configures everything!)
+5. 🎉 Your dashboard is live!
+
+**📖 [Read the complete deployment guide](./DEPLOYMENT.md)** for detailed instructions, custom domains, environment variables, and troubleshooting.
+
+Your dashboard will be automatically redeployed whenever you push to GitHub!
+
+##  Project Structure
 
 Here's how the project is organized:
 
