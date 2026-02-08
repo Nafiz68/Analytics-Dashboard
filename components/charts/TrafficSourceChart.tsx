@@ -33,9 +33,16 @@ export const TrafficSourceChart: React.FC<TrafficSourceChartProps> = memo(({ dat
               borderRadius: '8px',
               color: '#fff',
             }}
+            labelStyle={{ color: '#fff' }}
+            itemStyle={{ color: '#fff' }}
             formatter={(value: number) => [`${value}%`, 'Traffic']}
           />
-          <Bar dataKey="value" radius={[0, 8, 8, 0]}>
+          <Bar 
+            dataKey="value" 
+            radius={[0, 8, 8, 0]}
+            animationDuration={1200}
+            animationEasing="ease-in-out"
+          >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}

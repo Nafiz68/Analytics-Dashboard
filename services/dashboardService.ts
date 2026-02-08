@@ -105,19 +105,23 @@ const generateMockData = (filters: DashboardFilters): DashboardData => {
         orders: Math.floor(Math.random() * 400 + 200) * userMultiplier,
       }));
 
-  // User distribution
-  const userDistribution =
+  // User distribution - always show all users with their actual percentages
+  const totalUsers = 1245; // Total of all users: 650 + 450 + 145
+  const userDistribution = [
+    { name: 'Free Users', value: 650, color: '#3b82f6', percentage: ((650 / totalUsers) * 100).toFixed(1) },
+    { name: 'Premium Users', value: 450, color: '#8b5cf6', percentage: ((450 / totalUsers) * 100).toFixed(1) },
+    { name: 'Enterprise Users', value: 145, color: '#10b981', percentage: ((145 / totalUsers) * 100).toFixed(1) },
+  ];
+
+  // Filter based on user type
+  const filteredUserDistribution =
     userType === 'all'
-      ? [
-          { name: 'Free Users', value: 650, color: '#3b82f6' },
-          { name: 'Premium Users', value: 450, color: '#8b5cf6' },
-          { name: 'Enterprise Users', value: 145, color: '#10b981' },
-        ]
+      ? userDistribution
       : userType === 'free'
-      ? [{ name: 'Free Users', value: 650, color: '#3b82f6' }]
+      ? [userDistribution[0]]
       : userType === 'premium'
-      ? [{ name: 'Premium Users', value: 450, color: '#8b5cf6' }]
-      : [{ name: 'Enterprise Users', value: 145, color: '#10b981' }];
+      ? [userDistribution[1]]
+      : [userDistribution[2]];
 
   // Traffic sources
   const trafficSource = [
@@ -131,7 +135,7 @@ const generateMockData = (filters: DashboardFilters): DashboardData => {
     kpis,
     revenueData,
     orderData,
-    userDistribution,
+    userDistribution: filteredUserDistribution,
     trafficSource,
   };
 };

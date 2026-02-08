@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Menu, Bell, Moon, Sun, Download, ChevronDown, LogOut, User, Settings } from 'lucide-react';
+import { Menu, Bell, Download, ChevronDown, LogOut, User, Settings } from 'lucide-react';
 import { useUserStore } from '@/store/userStore';
 import { useThemeStore } from '@/store/themeStore';
 import { useDashboardStore } from '@/store/dashboardStore';
@@ -9,7 +9,6 @@ import { exportToCSV } from '@/services/dashboardService';
 
 export const Header: React.FC = () => {
   const { user, notifications, toggleSidebar } = useUserStore();
-  const { theme, toggleTheme } = useThemeStore();
   const { data } = useDashboardStore();
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
@@ -20,12 +19,6 @@ export const Header: React.FC = () => {
     if (data) {
       exportToCSV(data);
     }
-  };
-
-  const handleThemeToggle = () => {
-    console.log('Toggle theme clicked. Current theme:', theme);
-    toggleTheme();
-    console.log('Theme after toggle:', theme === 'light' ? 'dark' : 'light');
   };
 
   return (
@@ -59,18 +52,6 @@ export const Header: React.FC = () => {
           >
             <Download className="w-4 h-4" />
             <span className="hidden md:inline">Export CSV</span>
-          </button>
-
-          {/* Theme Toggle */}
-          <button
-            onClick={handleThemeToggle}
-            className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
-          >
-            {theme === 'light' ? (
-              <Moon className="w-5 h-5 text-slate-700 dark:text-slate-300" />
-            ) : (
-              <Sun className="w-5 h-5 text-slate-700 dark:text-slate-300" />
-            )}
           </button>
 
           {/* Notifications */}

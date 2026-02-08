@@ -20,6 +20,8 @@ export interface UserDistribution {
   name: string;
   value: number;
   color: string;
+  percentage?: string;
+  isOther?: boolean;
 }
 
 export interface TrafficSource {

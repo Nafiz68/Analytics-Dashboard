@@ -37,6 +37,8 @@ export const RevenueChart: React.FC<RevenueChartProps> = memo(({ data }) => {
               borderRadius: '8px',
               color: '#fff',
             }}
+            labelStyle={{ color: '#fff' }}
+            itemStyle={{ color: '#fff' }}
             formatter={(value: number) => [`$${value.toLocaleString()}`, 'Revenue']}
           />
           <Line
@@ -46,6 +48,8 @@ export const RevenueChart: React.FC<RevenueChartProps> = memo(({ data }) => {
             strokeWidth={2}
             dot={{ fill: '#3B82F6', r: 4 }}
             activeDot={{ r: 6 }}
+            animationDuration={1500}
+            animationEasing="ease-in-out"
           />
         </LineChart>
       </ResponsiveContainer>

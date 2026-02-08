@@ -36,12 +36,16 @@ export const OrdersChart: React.FC<OrdersChartProps> = memo(({ data }) => {
               borderRadius: '8px',
               color: '#fff',
             }}
+            labelStyle={{ color: '#fff' }}
+            itemStyle={{ color: '#fff' }}
             formatter={(value: number) => [value, 'Orders']}
           />
           <Bar
             dataKey="orders"
             fill="#8B5CF6"
             radius={[8, 8, 0, 0]}
+            animationDuration={1200}
+            animationEasing="ease-in-out"
           />
         </BarChart>
       </ResponsiveContainer>
