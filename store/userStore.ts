@@ -17,8 +17,8 @@ export const useUserStore = create<UserState>()(
   persist(
     (set) => ({
       user: {
-        name: 'John Doe',
-        email: 'john.doe@example.com',
+        name: 'Nafiz Khan',
+        email: 'nafizk368@gmail.com',
         role: 'admin',
       },
       notifications: [
