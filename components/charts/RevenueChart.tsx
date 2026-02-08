@@ -39,7 +39,7 @@ export const RevenueChart: React.FC<RevenueChartProps> = memo(({ data }) => {
             }}
             labelStyle={{ color: '#fff' }}
             itemStyle={{ color: '#fff' }}
-            formatter={(value: number) => [`$${value.toLocaleString()}`, 'Revenue']}
+            formatter={(value) => [`$${(value ?? 0).toLocaleString()}`, 'Revenue']}
           />
           <Line
             type="monotone"

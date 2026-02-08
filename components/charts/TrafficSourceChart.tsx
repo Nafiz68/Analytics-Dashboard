@@ -35,7 +35,7 @@ export const TrafficSourceChart: React.FC<TrafficSourceChartProps> = memo(({ dat
             }}
             labelStyle={{ color: '#fff' }}
             itemStyle={{ color: '#fff' }}
-            formatter={(value: number) => [`${value}%`, 'Traffic']}
+            formatter={(value) => [`${value ?? 0}%`, 'Traffic']}
           />
           <Bar 
             dataKey="value" 

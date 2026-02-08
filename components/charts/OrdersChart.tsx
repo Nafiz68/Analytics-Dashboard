@@ -38,7 +38,7 @@ export const OrdersChart: React.FC<OrdersChartProps> = memo(({ data }) => {
             }}
             labelStyle={{ color: '#fff' }}
             itemStyle={{ color: '#fff' }}
-            formatter={(value: number) => [value, 'Orders']}
+            formatter={(value) => [value ?? 0, 'Orders']}
           />
           <Bar
             dataKey="orders"
