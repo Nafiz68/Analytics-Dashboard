@@ -1,4 +1,5 @@
-﻿# Admin Analytics Dashboard
+﻿
+<h1 align="center">Admin Analytics Dashboard</h1>
 
 ![System Overlay](./Screenshot.png)
 
